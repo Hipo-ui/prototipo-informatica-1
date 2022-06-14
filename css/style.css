@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Open Sans, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+  }
+
+  label {
+    @apply text-lg text-primary-600 font-medium;
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select { 
+    @apply w-full border-gray-200 rounded text-gray-700 caret-accent-600 py-3
+    focus:border-accent-500 focus:ring-4 focus:ring-accent-300/50;
+  }
+
+  [type='checkbox'], [type='radio'] {
+    @apply border-gray-200 rounded
+    focus:border-accent-500 focus:ring-4 focus:ring-accent-300/50;
+  }
+}
+
+@layer components {
+  /******************************************************************************/
+  /*  GENERALES  ****************************************************************/
+  /******************************************************************************/
+
+  /********************************  Títulos, Subtítulos, Textos  */
+  .title-light {
+    @apply text-white text-4xl font-title font-extrabold
+    xl:text-6xl;
+  }
+
+  .title-dark {
+    @apply text-primary-700 text-4xl font-title font-extrabold
+    xl:text-6xl;
+  }
+
+  .subtitle {
+    @apply text-primary-700 text-2xl font-title font-semibold;
+  }
+
+  .content_text-light {
+    @apply text-white/90 text-lg font-medium;
+  }
+
+  .content_text-dark {
+    @apply text-primary-600 text-lg font-medium;
+  }
+
+  .content_text-emphasis {
+    @apply text-accent-500 text-lg font-title font-bold;
+  }
+
+  /********************************  Title Line  */
+  .title_line {
+    @apply w-3/5 border-2 border-accent-500 rounded;
+  }
+
+  
+  /********************************  Header  */
+  .header {
+    @apply w-full bg-primary-500 text-white/60 font-title font-semibold;
+  }
+
+  /********************************  Navbar  */
+  .navbar-link {
+    @apply hover:text-white;
+  }
+
+  .navbar-link-active {
+    @apply text-white;
+  }
+
+  /********************************  Brand Header  */
+  .brand {
+    @apply w-full bg-primary-700 text-white text-sm font-title font-medium text-center;
+  }
+
+  .brand-link:hover {
+    @apply text-accent-400;
+  }
+
+  .brand-link-icon {
+    @apply w-5 h-5;
+  }
+
+  /********************************  Footer  */
+  .footer {
+    @apply w-full bg-primary-800 py-16;
+  }
+
+  .footer-title {
+    @apply text-white text-xl font-title font-bold;
+  }
+
+  .footer-link {
+    @apply flex flex-row gap-3 text-white text-sm font-medium;
+  }
+
+  .footer-social_icon {
+    @apply text-white text-4xl;
+  }
+
+  /********************************  Campo de texto  */
+  .input_group {
+    @apply flex flex-col gap-1;
+  }
+
+  /********************************  Botones  */
+  .btn_primary {
+    @apply inline-block bg-white rounded text-primary-500 font-title font-semibold shadow-md drop-shadow-sm px-4 py-2 
+    hover:bg-primary-600 hover:text-white;
+  }
+
+  .btn_primary:hover {
+    @apply bg-primary-600 text-white;
+  }
+
+  .btn_primary-lg {
+    @apply text-xl px-6 py-3;
+  }
+
+  /********************************  Secciones  */
+  .section-fluid {
+    @apply py-14 lg:py-28;
+  }
+
+  .section-container {
+    @apply container flex flex-col gap-8 mx-auto;
+  }
+
+  /********************************  Fondo de Secciones  */
+  .bg-light {
+    @apply bg-accent-50;
+  }
+
+  .bg-dark {
+    @apply bg-accent-500;
+  }
+
+  /********************************  Paginación Carrusel  */
+  .swiper-pagination-bullet {
+    @apply bg-white  text-white opacity-100;
+  }
+
+  .swiper-pagination-bullet-active{
+    @apply bg-red-600 text-red-500;
+  }
+
+ 
+
+  /******************************************************************************/
+  /*  COMPONENTES COMPARTIDOS  **************************************************/
+  /******************************************************************************/
+
+  /********************************  Descripción de la carrera  */
+  .description_card {
+    @apply flex flex-col-reverse gap-6 bg-gradient-to-r from-primary-500 to-primary-400 rounded-2xl px-6 py-14
+    lg:flex-row xl:drop-shadow-xl lg:px-10 ;
+  }
+
+  .description_card-content_text {
+    @apply w-full flex flex-col gap-8
+    lg:w-3/5;
+  }
+
+  .description_card-content_image {
+    @apply w-full h-full flex flex-row justify-center my-auto
+    lg:w-2/5 ;
+  }
+
+  .description_card-content_image-figure {
+    @apply w-11/12 object-cover
+    lg:w-full;
+  }
+
+  /********************************  Trabajos que los alumnos realizan  */
+  .work_item {
+    @apply flex flex-col gap-x-6 bg-white border border-accent-100 rounded-2xl relative
+    xl:flex-row xl:pr-8;
+  }
+
+  .work_item-content_image {
+    @apply w-full bg-white rounded-2xl
+    xl:w-3/4;
+  }
+
+  .work_item-content_image-figure {
+    @apply  w-full h-[24rem] max-h-[36rem] object-cover rounded-2xl rounded-b-none 
+    lg:h-[30rem]
+    xl:h-[36rem] xl:rounded-2xl xl:rounded-r-none;
+  }
+
+  .work_item-content_text {
+    @apply w-full xl:w-1/4 flex flex-col gap-4 p-6 mb-4
+    lg:px-12 
+    xl:px-0 xl:mb-0;
+  }
+
+
+
+  /******************************************************************************/
+  /*  INICIO  *******************************************************************/
+  /******************************************************************************/
+
+  /********************************  Banner Carrusel  */
+  .carousel_banner-image {
+    @apply max-h-[72vh] xl:max-h-[82vh] bg-primary-900 bg-cover bg-center bg-no-repeat relative;
+  }
+
+  .carousel_banner-content {
+    @apply h-full flex flex-row items-center bg-primary-900/80
+    lg:w-1/2 lg:backdrop-blur-sm;
+  }
+
+  .carousel_banner-content-text {
+    @apply flex flex-col gap-y-6 mx-8 
+    lg:mx-24;
+  }
+
+  .carousel_banner-title {
+    @apply text-white text-4xl font-title font-bold
+    xl:text-6xl;
+  }
+
+  .carousel_banner-description {
+    @apply text-xl text-white/80 font-semibold;
+  }
+
+  /********************************  Características  */
+  .feature_item {
+    @apply flex flex-col gap-4 bg-accent-50 border border-accent-100 rounded-xl drop-shadow-sm p-4;
+  }
+
+  .feature_item-icon {
+    @apply bg-accent-100 border-4 border-accent-300 rounded-full mx-auto;
+  }
+
+  .feature_item-icon-svg {
+    @apply w-16 h-16 fill-transparent stroke-primary-500 stroke-1 m-4;
+  }
+
+  .feature_item-content {
+    @apply flex flex-col gap-4;
+  }
+
+  /********************************  Aside  */
+  .section_aside {
+    @apply flex flex-col gap-8 bg-accent-50 border border-accent-100 rounded-xl p-6;
+  }
+
+  /********************************  Noticias */
+  .aside_item-notice {
+    @apply flex flex-col gap-2 bg-white border border-accent-100 rounded-lg p-4;
+  }
+
+  .aside_item-title {
+    @apply flex flex-row gap-2 text-primary-700 text-lg font-title font-semibold 
+    xl:truncate;
+  }
+
+  .aside_item-description {
+    @apply text-gray-600;
+  }
+
+  .aside_item-date {
+    @apply flex flex-row justify-end gap-1 text-gray-500 text-xs text-right;
+  }
+
+  .aside_item-date-icon {
+    @apply w-4 h-4 fill-transparent stroke-gray-500 stroke-1;
+  }
+
+  /********************************  Eventos */
+  .aside_item-event {
+    @apply flex flex-col bg-white border border-accent-100 rounded-lg;
+  }
+
+  .aside_item-image {
+    @apply h-40 rounded-t-lg object-cover;
+  }
+
+  .aside_item-content {
+    @apply flex flex-col gap-2 p-4;
+  }
+
+  /********************************  Opiniones  */
+  .user_item {
+    @apply flex flex-col justify-between bg-white border border-accent-100 rounded-xl drop-shadow-sm;
+  }
+
+  .user_item-link {
+    @apply flex flex-col gap-4 p-4;
+  }
+
+  .user_item-content_image {
+    @apply bg-accent-100 border-4 border-accent-300 rounded-full mx-auto;
+  }
+
+  .user_item-text_content-text {
+    @apply flex flex-row justify-center gap-2 bg-accent-50 text-primary-500 text-lg font-medium text-center rounded-b-xl p-4;
+  }
+
+  /********************************  Tecnologías  */
+  .logo_item {
+    @apply w-44 max-h-24  flex flex-col justify-center bg-white border border-accent-100 rounded-xl drop-shadow-lg shrink-0 p-4;
+  }
+
+  .logo_item-content {
+    @apply flex justify-center;
+  }
+
+  .logo_item-content {
+    @apply m-auto w-full h-14;
+  }
+
+
+
+  /******************************************************************************/
+  /*  ACERCA DE   ***************************************************************/
+  /******************************************************************************/
+
+  /********************************  Campo de acción  */
+  .action_item {
+    @apply flex flex-col justify-evenly gap-4 bg-white border border-accent-100 rounded-xl p-4;
+  }
+
+  .action_item-content_icon {
+    @apply bg-accent-100 border-4 border-accent-300 rounded-full mx-auto;
+  }
+
+  .action_item-content_icon-svg {
+    @apply w-16 h-16 fill-transparent stroke-primary-500 stroke-1 m-4;
+  }
+
+  .action_item-text_content-text {
+    @apply flex flex-col gap-4 px-2;
+  }
+
+  /********************************  Temario  */
+  .temary_item {
+    @apply flex flex-col gap-4 bg-white border border-accent-100 rounded-xl p-4;
+  }
+
+  .temary_item-content {
+    @apply px-2;
+  }
+
+  .temary_item-content-list {
+    @apply flex flex-col gap-1 text-primary-500 text-lg font-medium list-none list-inside;
+  }
+
+
+  /******************************************************************************/
+  /*  INFORMACIÓN DE INGRESO  ***************************************************/
+  /******************************************************************************/
+
+  /********************************  Requisitos  */
+  .requirement_item {
+    @apply flex flex-row items-center bg-accent-50 border border-accent-100 rounded-xl drop-shadow-sm p-4;
+  }
+
+  .requirement_item-content {
+    @apply flex flex-row gap-2;
+  }
+  
+  .requirement_item-content-icon-svg {
+    @apply w-6 h-6 fill-transparent stroke-accent-500 stroke-2;
+  }
+
+
+  /********************************  Fechas  */
+  .date_item {
+    @apply w-full flex flex-row gap-4 bg-white rounded-xl shadow-md shadow-accent-200 drop-shadow-sm p-6;
+  }
+
+  .date_item-content_icon {
+    @apply flex flex-row;
+  }
+
+  .date_item-content_icon-form {
+    @apply flex flex-row w-16 h-16 bg-primary-500 text-white rounded-full m-auto;
+  }
+
+  .date_item-content_icon-form-number {
+    @apply text-3xl font-semibold m-auto;
+  }
+  
+  .date_item-content_text {
+    @apply flex flex-col gap-2;
+  }
+
+  /********************************  Costos y Becas  */
+  .cost_item {
+    @apply flex flex-col w-full border border-accent-100 rounded-xl drop-shadow-sm
+    lg:w-1/2;
+  }
+
+  .cost_item-content_figure {
+    @apply bg-accent-50 rounded-t-xl;
+  }
+
+  .cost_item-content_figure-image {
+    @apply w-4/5 object-cover mx-auto;
+  }
+
+  .cost_item-content_text {
+    @apply flex flex-col gap-4 p-6;
+  }
+
+
+  /******************************************************************************/
+  /*  ALUMNOS  ******************************************************************/
+  /******************************************************************************/
+
+  /********************************  Vacantes - Estancias & Sevicio Social  */
+  .vacant_item {
+    @apply bg-white border border-accent-100 rounded-xl drop-shadow-sm p-4; 
+  }
+
+  .vacant_item-content {
+    @apply h-full flex flex-col justify-between gap-4;
+  }
+
+  .vacant_item-content-date {
+    @apply flex flex-row justify-end gap-1 text-gray-500 text-xs;
+  }
+
+
+
+  /******************************************************************************/
+  /*  PROFESORES  ******************************************************************/
+  /******************************************************************************/
+
+  /********************************  Profesor  */
+  .teacher_item {
+    @apply flex flex-col justify-between bg-white border border-accent-100 rounded-xl drop-shadow-sm;
+  }
+
+  .teacher_item-link {
+    @apply flex flex-col gap-4 p-4;
+  }
+
+  .teacher_item-content_icon {
+    @apply bg-accent-100 border-4 border-accent-300 rounded-full mx-auto;
+  }
+
+  .teacher_item-text_content-text {
+    @apply flex flex-col gap-4 bg-accent-50 rounded-b-xl text-center p-4;
+  }
+
+  .teacher_item-text_content-text-email {
+    @apply flex flex-row gap-2 justify-center text-primary-500 text-lg font-medium;
+  }
+
+
+  /******************************************************************************/
+  /*  CONTACTO  ******************************************************************/
+  /******************************************************************************/
+
+  /********************************  Medios de contacto  */
+  .contact_item {
+    @apply flex flex-row items-center gap-8 bg-accent-50 rounded p-4;
+  }
+
+  .contact_item-icon {
+    @apply w-10 h-10 fill-transparent stroke-primary-500 stroke-2;
+  } 
+
+  .social_item {
+    @apply flex flex-row content-center gap-8 rounded p-4;
+  }
+
+  .social_item-icon {
+    @apply flex flex-row gap-4 items-center font-medium;
+  }
+
+  .social_item-icon-size {
+    @apply text-4xl;
+  }
+
+
+  /******************************************************************************/
+  /*  PREGUNTAS FRECUENTES  *****************************************************/
+  /******************************************************************************/
+
+  /********************************  Preguntas  */
+  .faq_item {
+    @apply flex flex-col gap-4 bg-accent-50 rounded-xl p-4;
+  }
+
+  .faq_item-content_question {
+    @apply flex flex-row justify-between text-left;
+  }
+
+  .faq_item-content_question-question {
+    @apply text-primary-600 text-lg font-title font-bold;
+  }
+
+  .faq_item-content_question-icon {
+    @apply w-6 h-6 fill-primary-600;
+  }
+
+  .faq_item-content_answer {
+    @apply text-primary-700 text-base font-medium ;
+  }
+}

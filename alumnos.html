@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/swiper-pagination.css">
+    <link rel="shortcut icon" href="./img/logos/escudo-unsij-white.png" type="image/png">
+    <title>Alumnos | Licenciatura en Informática</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <app-header>
+            <template v-slot:about>
+                <a href="./acerca_de.html" class="navbar-link">Acerca de la carrera</a>
+            </template>
+            <template v-slot:login-info>
+                <a href="./informacion_ingreso.html" class="navbar-link">Información de ingreso</a>
+            </template>
+            <template v-slot:students>
+                <a href="./alumnos.html" class="navbar-link navbar-link-active">Alumnos</a>
+            </template>
+            <template v-slot:teachers>
+                <a href="./profesores.html" class="navbar-link">Profesores</a>
+            </template>
+            <template v-slot:contact>
+                <a href="./contacto.html" class="navbar-link">Contacto</a>
+            </template>
+            <template v-slot:faqs>
+                <a href="./preguntas_frecuentes.html" class="navbar-link">Preguntas frecuentes</a>
+            </template>
+        </app-header>
+        <!-- /Header -->
+
+
+        <!-- Contennido -->
+        <main class="w-full">
+
+            <!-- Horario de Clases -->
+            <section class="section-fluid section-container">
+                <div class="bg-gradient-to-r from-primary-500 to-primary-400 rounded-2xl xl:drop-shadow-xl">
+                    <div
+                        class="bg-[url('../img/animated/lines.svg')] bg-cover bg-no-repeat bg-bottom w-full px-6 lg:px-10 py-14 rounded-2xl">
+                        <div class="description_card-content_text">
+                            <div>
+                                <header class="title-light">Horario de clases
+                                </header>
+                            </div>
+                            <div>
+                                <p class="content_text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Eligendi explicabo magnam natus, fugit autem non.</p>
+                            </div>
+                            <div class="mx-auto lg:mx-0">
+                                <a href="./acerca_de.html" class="btn_primary btn_primary-lg">Descargar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /Horario de Clases -->
+
+
+            <!-- Trabajos -->
+            <div class="section-fluid bg-light">
+                <section class="section-container">
+                    <div>
+                        <header class="title-dark">
+                            Lo que nuestros alumnos realizan</header>
+                    </div>
+
+                    <div class="drop-shadow-xl">
+                        <div class="swiper mySwiperWorks relative" data-aos="fade-up">
+                            <div class="swiper-wrapper relative">
+                                <app-work>
+                                    <template v-slot:image>
+                                        <img src="./img/photos/estudiantes-1.jpg" alt=""
+                                            class="work_item-content_image-figure" loading="lazy">
+                                    </template>
+                                    <template v-slot:title>
+                                        Aplicación Web para Recopilar, Difundir y Aprender Lenguas Originarias del Sur
+                                        de México: Una Perspectiva desde los Hablantes
+                                    </template>
+                                    <template v-slot:description>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat vel
+                                        cupiditate ea suscipit corrupti numquam et aliquam voluptates sint, quam, iusto
+                                        alias rerum nam at.
+                                    </template>
+                                </app-work>
+                                <app-work>
+                                    <template v-slot:image>
+                                        <img src="./img/photos/estudiantes-2.jpg" alt=""
+                                            class="work_item-content_image-figure" loading="lazy">
+                                    </template>
+                                    <template v-slot:title>
+                                        Reconocimiento de Movimientos Motores
+                                        Estereotipados en niños con Transtorno del Espectro Autista utilizando una red
+                                        ConvLSTM
+                                    </template>
+                                    <template v-slot:description>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat vel
+                                        cupiditate ea suscipit corrupti numquam et aliquam voluptates sint, quam, iusto
+                                        alias rerum nam at.
+                                    </template>
+                                </app-work>
+                                <app-work>
+                                    <template v-slot:image>
+                                        <img src="./img/photos/estudiantes-3.jpg" alt=""
+                                            class="work_item-content_image-figure" loading="lazy">
+                                    </template>
+                                    <template v-slot:title>
+                                        Experiencias de Acercamiento Tecnológico a Jóvenes Preuniversitarios: Robótica
+                                        Educativa en la Sierra Norte de Oaxaca
+                                    </template>
+                                    <template v-slot:description>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat vel
+                                        cupiditate ea suscipit corrupti numquam et aliquam voluptates sint, quam, iusto
+                                        alias rerum nam at.
+                                    </template>
+                                </app-work>
+                            </div>
+                            <div class="hidden md:block">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /Trabajos -->
+
+
+            <!-- Vacantes Estancias -->
+            <div class="section-fluid bg-white">
+                <section class="section-container">
+                    <div>
+                        <header class="title-dark">Vacantes para estancias profesionales</header>
+                    </div>
+
+                    <div class="grid grid-cols-none md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                        <app-vacant>
+                            <template v-slot:title>Diseño de aplicación web progresiva</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+
+                        <app-vacant>
+                            <template v-slot:title>Entrenamiento de redes neuronales</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+                        
+                        <app-vacant>
+                            <template v-slot:title>Gestión de recursos en servidores</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+                        
+                        <div class="col-span-full flex flex-row xl:justify-end">
+                            <a href="" class="btn_primary" data-aos="zoom-in">Ver más vacantes</a>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+            <!-- /Vacantes Estancias -->
+
+            <!-- Vacantes Servicio Social -->
+            <div class="section-fluid bg-light">
+                <section class="section-container">
+                    <div>
+                        <header class="title-dark">Vacantes para servicio social</header>
+                    </div>
+
+                    <div class="grid grid-cols-none md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+                        <app-vacant>
+                            <template v-slot:title>Desarrollador front end jr.</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+ 
+                        
+                        <app-vacant>
+                            <template v-slot:title>Principiante scrum master</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+
+                        <app-vacant>
+                            <template v-slot:title>Tester de Ruby on rails</template>
+                            <template v-slot:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Maxime perferendis quis laudantium consequuntur debitis placeat.</template>
+                            <template v-slot:date>17 Jun 2022</template>
+                        </app-vacant>
+
+                        <div class="col-span-full flex flex-row xl:justify-end">
+                            <a href="" class="btn_primary" data-aos="zoom-in">Ver más vacantes</a>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            <!-- /Vacantes Servicio Social -->
+
+        </main>
+        <!-- Contenido -->
+
+
+        <!-- Footer -->
+        <app-footer>
+        </app-footer>
+        <!-- /Footer -->
+    </div>
+
+
+    <!-- Componentes -->
+    <script src="./js/app.js"></script>
+
+    <!-- Carousel -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiperWorks = new Swiper('.mySwiperWorks', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            effect: "fade",
+            keyboard: {
+                enabled: true,
+            },
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    </script>
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000,
+            delay: 200,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
